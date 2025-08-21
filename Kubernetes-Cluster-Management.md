@@ -111,9 +111,7 @@ Here’s a simple breakdown:
 
 ### **1. Control Plane (Master Node)**
 
-The **Control Plane is the brain of the Kubernetes cluster**, responsible for making decisions about the cluster such as **scheduling workloads** and **maintaining the desired state of the system**.
-
-- Key components of the Control Plane:
+The **Control Plane is the brain of the Kubernetes cluster**, responsible for making decisions about the cluster such as **scheduling workloads** and **maintaining the desired state of the system**. Key components of the Control Plane are given below :
 
 #### **1. API Server**
 
@@ -164,6 +162,84 @@ In short, the **Scheduler ensures that workloads (pods) are placed on the right 
 
 **Etcd stores all of this data in a Key-Value pair format** meaning each piece of **data is stored as a unique key** & its corresponding value. In simple terms, **etcd** acts as the **"Source of Truth"** for the entire Kubernetes cluster. It ensures that all components in the cluster **are in sync with the latest configurations and data**.
 
+Here is a **Diagram summarizing the Control Plane** :
+
 <div align="center">
     <img src="Diagrams/Control-Plane.png" width=90%>
+</div>
+
+### **2. Worker Node**
+
+The **Worker Node is responsible for running the application containers** & **executing tasks as instructed by the Master Node**. It **communicates with the Master Node** to receive instructions on resource allocation and workload management. **To ensure scalability a Kubernetes cluster can have multiple Worker Nodes**.
+
+The minimum number of worker nodes in a Kubernetes cluster depends on your needs, but the general recommendation is:
+
+- **At least 2 Worker Nodes:** This ensures high availability and fault tolerance. If one node fails the other can continue running the workloads.
+
+- **For Production:** Ideally 3 or more worker nodes are recommended. This provides better resilience and allows for load balancing, failover & easy scaling.
+
+Key components of the Worker Node are given below :
+
+#### **1.Kubelet**
+
+The **Kubelet is the primary component of the Worker Node** in Kubernetes. It is **responsible for managing the pods running on the Working Node**. Key responsibilities of the Kubelet:
+
+- **Pod Monitoring:** It continuously checks if the pods are running as expected.
+
+- **Self-Healing:** If a pod fails or becomes unhealthy the **Kubelet ensures a new pod is created to replace the failed one.** Since a **failed pod cannot be restarted the new pod might have a different IP address**.
+
+- **Communication with API Server:** **The Kubelet gets details and instructions about the pods from the API Server on the Master Node**.
+
+In essence, the Kubelet ensures that pods are always running and healthy on the worker node and helps maintain the desired state of the cluster.
+
+#### **2.Kube-Proxy**
+
+The **Kube-proxy is a key component of the Worker Node that manages networking in the Kubernetes cluster**. It **handles network communication between pods and services**. Key responsibilities of Kube-proxy:
+
+- **Networking Configuration:** It **maintains the network configuration for the cluster**, including pod IPs & ensures that traffic can reach the right destinations.
+
+- **Load Balancing:** It performs load balancing to distribute traffic across multiple instances of a service ensuring efficient resource usage & high availability.
+
+- **Routing:** **Kube-proxy routes the traffic to the appropriate pod** based on the service's configuration.
+
+- **Communication with API Server:** Kube-proxy retrieves pod and service information from the API Server on the Master Node.
+
+In short, **Kube-proxy ensures that the network is properly configured** traffic is routed efficiently & **load balancing is applied across pods within the Kubernetes cluster**.
+
+#### **3.Pods**
+
+A **Pod is the smallest and simplest unit in Kubernetes**. It can **contain one or more containers** & it’s **where applications are deployed**. Key features of a Pod:
+
+- **Containers:** A Pod **typically hosts a single container** but multiple containers can be grouped together in the same Pod if they need to share resources or communicate closely.
+
+- **IP Address:** **Each Pod gets a unique IP address** (either public or private) within the cluster & this IP is shared by all containers within that Pod.
+
+- **Best Practice:** It’s **generally recommended to have one container per Pod for simplicity**, scalability & isolation. However, multiple containers can be used when necessary, as long as they need to work closely together.
+
+In short, **Pods are where your application containers run in Kubernetes** and they manage networking and resource sharing for the containers within them.
+
+#### **4.Container Engine**
+
+**A Container Engine provides the runtime environment needed to create and manage containers**. In Kubernetes, the Container Engine interacts directly with the container runtime, which is **responsible for running and managing the containers inside Pods**. Key points:
+
+- **Container Engine:** It handles the operations of creating, running, and managing containers.
+
+- **Container Runtime:** The container runtime is what actually runs the container. It is responsible for pulling images, creating containers, and executing them.
+
+- **Popular Container Engines:** Some well-known container engines are:
+
+  - **Docker:** One of the most widely used and trusted container engines.
+
+  - **CRI-O:** A lightweight container engine that adheres to Kubernetes' Container Runtime Interface (CRI).
+
+  - **containerd:** An industry-standard core container runtime used in Docker and other container platforms.
+
+  - **rkt (Rocket):** Another container engine, though less commonly used in Kubernetes.
+
+For **simplicity and compatibility with Kubernetes, Docker is often the go-to container engine** & we'll use it in our setup when working with Kubernetes clusters.
+
+Here is a **Diagram summarizing the Worker Node** :
+
+<div align="center">
+    <img src="Diagrams/Worker-Node.png" width=90%>
 </div>
