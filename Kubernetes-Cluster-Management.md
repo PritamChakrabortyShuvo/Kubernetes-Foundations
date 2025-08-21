@@ -8,7 +8,7 @@
 
 ## What is Kubernetes (K8S)?
 
-**Kubernetes** is an **open-source platform** designed to automate the **deployment**, **scaling** & **management of containerized applications**. It **orchestrates containers**, ensuring that they are d**eployed consistently, scaled based on demand** & **maintained with minimal downtime**. Kubernetes handles the **complexities of container management**, such as **load balancing**, **self-healing** & **rolling updates** while allowing developers and operators to focus on delivering high-performance applications in a reliable and scalable manner.
+**Kubernetes** is an **open-source platform** designed to automate the **deployment**, **scaling** & **management of containerized applications**. It **orchestrates containers**, ensuring that they are **deployed consistently, scaled based on demand** & **maintained with minimal downtime**. Kubernetes handles the **complexities of container management**, such as **load balancing**, **self-healing** & **rolling updates** while allowing developers and operators to focus on delivering high-performance applications in a reliable and scalable manner.
 
 This open-source project is hosted by the **Cloud Native Computing Foundation (CNCF)**.
 
@@ -23,6 +23,10 @@ To effectively understand Kubernetes (K8s), it's **important** to have a **found
 - **Docker:** Think of Docker as a **Ship** carrying multiple containers. Each container holds a piece of the application.
 
 - **Kubernetes:** Now, **envision that same ship but with a steering wheel**. Just as the captain uses the ship’s wheel to **navigate and direct the ship**, **Kubernetes serves as the "steering wheel"** for managing and orchestrating containers. It **automates container deployment**, **scaling** & **management across clusters**, ensuring everything runs smoothly and efficiently.
+
+<div align="center">
+    <img src="Diagrams/Docker-with-Kubernetes.jpg" width=75%>
+</div>
 
 ## What are Monolithic Architecture and Microservices Architecture?
 
