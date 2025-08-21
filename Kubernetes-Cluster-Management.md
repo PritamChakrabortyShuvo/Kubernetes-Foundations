@@ -40,7 +40,7 @@ In **Monolithic Architecture**, imagine a restaurant with a single large kitchen
 
 ### Microservices Architecture
 
-Microservices Architecture, on the other hand, is more like a food delivery service (e.g., FoodPanda or Pathao) that works with a network of different restaurants, each specializing in a particular type of food (e.g., one restaurant for burgers, another for rolls).
+Microservices Architecture, on the other hand, is more like a food delivery service (e.g., Foodpanda or Pathao) that works with a network of different restaurants, each specializing in a particular type of food (e.g., one restaurant for burgers, another for rolls).
 
 - **Key Advantage:** When we place an order it's not prepared in one large kitchen but rather in specialized kitchens (microservices) that handle specific tasks. Each restaurant (microservice) is responsible for preparing a specific portion of the order.
 
@@ -91,7 +91,7 @@ Kubernetes primarily supports **`YAML`** and **`JSON`** for defining configurati
 
 ## Master Node and Worker Node
 
-- **Master Node:** This is the **control center of the Kubernetes cluster**. It **manages** the **entire cluster**, **making decisions about the cluster’s state** such as **scheduling** containers and **monitoring** their health. It also handles the **API server**, **etcd - KV STOre** (for storing data) & **controller manager**.
+- **Master Node:** This is the **control center of the Kubernetes cluster**. It **manages** the **entire cluster**, **making decisions about the cluster’s state** such as **scheduling** containers and **monitoring** their health. It also handles the **API server**, **etcd - KV Store** (for storing data) & **controller manager**.
 
 - **Worker Node:** These are the **nodes that actually run the applications**. Each worker node **hosts a set of containers (pods)** and communicates with the master node to receive instructions. They handle the actual execution of the tasks that the master node schedules.
 
@@ -101,7 +101,7 @@ In short:
 - Worker Node: Executes the tasks (runs containers) as directed by the master node.
 
 <div align="center">
-    <img src="Diagrams/MasterNode-WorkerNode.png" width=80%>
+    <img src="Diagrams/MasterNode-WorkerNode.png" width=90%>
 </div>
 
 ## Kubernetes Architecture
@@ -170,7 +170,7 @@ In short, the **Scheduler ensures that workloads (pods) are placed on the right 
 Here is a **Diagram summarizing the Control Plane** :
 
 <div align="center">
-    <img src="Diagrams/Control-Plane.png" width=90%>
+    <img src="Diagrams/Control-Plane.png" width=100%>
 </div>
 
 ### **2. Worker Node**
@@ -246,5 +246,5 @@ For **simplicity and compatibility with Kubernetes, Docker is often the go-to co
 Here is a **Diagram summarizing the Worker Node** :
 
 <div align="center">
-    <img src="Diagrams/Worker-Node.png" width=90%>
+    <img src="Diagrams/Worker-Node.png" width=100%>
 </div>
