@@ -84,6 +84,7 @@ Kubernetes primarily supports **`YAML`** and **`JSON`** for defining configurati
 | **Autoscaling** | Not Supported | Supported |
 
 </div>
+
 ## Master Node and Worker Node
 
 - **Master Node:** This is the **control center of the Kubernetes cluster**. It **manages** the **entire cluster**, **making decisions about the cluster’s state** such as **scheduling** containers and **monitoring** their health. It also handles the **API server**, **etcd - KV STOre** (for storing data) & **controller manager**.
