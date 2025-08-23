@@ -211,19 +211,7 @@ The **Kube-proxy is a key component of the Worker Node that manages networking i
 
 In short, **Kube-proxy ensures that the network is properly configured** traffic is routed efficiently & **load balancing is applied across pods within the Kubernetes cluster**.
 
-#### **3.Pods**
-
-A **Pod is the smallest and simplest unit in Kubernetes**. It can **contain one or more containers** & it’s **where applications are deployed**. Key features of a Pod:
-
-- **Containers:** A Pod **typically hosts a single container** but multiple containers can be grouped together in the same Pod if they need to share resources or communicate closely.
-
-- **IP Address:** **Each Pod gets a unique IP address** (either public or private) within the cluster & this IP is shared by all containers within that Pod.
-
-- **Best Practice:** It’s **generally recommended to have one container per Pod for simplicity**, scalability & isolation. However, multiple containers can be used when necessary, as long as they need to work closely together.
-
-In short, **Pods are where your application containers run in Kubernetes** and they manage networking and resource sharing for the containers within them.
-
-#### **4.Container Engine**
+#### **3.Container Engine**
 
 **A Container Engine provides the runtime environment needed to create and manage containers**. In Kubernetes, the Container Engine interacts directly with the container runtime, which is **responsible for running and managing the containers inside Pods**. Key points:
 
@@ -243,8 +231,20 @@ In short, **Pods are where your application containers run in Kubernetes** and t
 
 For **simplicity and compatibility with Kubernetes, Docker is often the go-to container engine** & we'll use it in our setup when working with Kubernetes clusters.
 
+#### **4.Pods**
+
+A **Pod is the smallest and simplest unit in Kubernetes**. It can **contain one or more containers** & it’s **where applications are deployed**. Key features of a Pod:
+
+- **Containers:** A Pod **typically hosts a single container** but multiple containers can be grouped together in the same Pod if they need to share resources or communicate closely.
+
+- **IP Address:** **Each Pod gets a unique IP address** (either public or private) within the cluster & this IP is shared by all containers within that Pod.
+
+- **Best Practice:** It’s **generally recommended to have one container per Pod for simplicity**, scalability & isolation. However, multiple containers can be used when necessary, as long as they need to work closely together.
+
+In short, **Pods are where your application containers run in Kubernetes** and they manage networking and resource sharing for the containers within them.
+
 Here is a **Diagram summarizing the Worker Node** :
 
 <div align="center">
-    <img src="Diagrams/Worker-Node.png" width=100%>
+    <img src="Diagrams/Worker-Node-01.png" width=100%>
 </div>
